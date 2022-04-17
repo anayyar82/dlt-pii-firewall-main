@@ -1,0 +1,34 @@
+{
+    "name": "DLT PII Firewall",
+    "storage": "",
+    "configuration": {
+        "TABLE_PATH": "",
+        "INPUT_PATH": "",
+        "STORAGE_PATH": "",
+        "EXPECTATIONS_PATH": "/Workspace/Repos/<username>/dlt-pii-firewall/expectations/pii_detection.json"
+    },
+    "clusters": [
+        {
+            "label": "default",
+            "autoscale": {
+                "min_workers": 1,
+                "max_workers": 5
+            }
+        }
+    ],
+    "libraries": [
+        {
+            "notebook": {
+                "path": "/Repos/<username>/dlt-pii-firewall/notebooks/01_observability"
+            }
+        },
+        {
+            "notebook": {
+                "path": "/Repos/<username>/dlt-pii-firewall/notebooks/02_detect_and_redact_pii"
+            }
+        }
+    ],
+    "target": "dlt_pii",
+    "continuous": false,
+    "development": true
+}
